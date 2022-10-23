@@ -19,12 +19,8 @@ app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
+app.use(express.json());
 app.use("/articles", articleRoute);
-
-
-
-
-
 
 app.listen(9000, function (req, res) {
   console.log("Server running");
