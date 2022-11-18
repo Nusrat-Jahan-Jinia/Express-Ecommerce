@@ -11,8 +11,9 @@ async function getAllArticles(req, res) {
 }
 async function postArticle(req, res) {
     const article = new Article({
-        name: req.body.name,
-        tag: req.body.tag,
+      name: req.body.name,
+      description: req.body.description,
+      tag: req.body.tag,
       });
       try {
         const p1 = await article.save();
@@ -35,6 +36,8 @@ async function postArticle(req, res) {
     try {
         const article = await Article.findById(req.params.id);
         article.name = req.body.name
+        article.description = req.body.description
+        article.tag = req.body.tag
         const p1 = await article.save();
         res.send(p1)
       } catch (err) {
