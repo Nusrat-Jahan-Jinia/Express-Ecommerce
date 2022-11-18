@@ -9,7 +9,7 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-    user_id: {
+    user_role: {
     type: String,
     required: true,
   },

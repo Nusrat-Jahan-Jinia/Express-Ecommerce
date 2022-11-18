@@ -1,10 +1,10 @@
 const express = require("express");
-const Price = require("../models/sale");
+const Sale = require("../models/sale");
 
-async function getAllPrices(req, res) {
+async function getAllSales(req, res) {
   try {
-    const prices = await Price.find();
-    res.json(prices);
+    const sales = await Sale.find();
+    res.json(sales);
   } catch (err) {
     res.send("Error" + err);
   }
@@ -14,5 +14,5 @@ async function getAllPrices(req, res) {
 
 
 module.exports = {
-    getAllPrices,
+    getAllSales,
 };

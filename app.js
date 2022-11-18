@@ -8,6 +8,7 @@ const stockRoute = require("./routes/stock");
 const articleRouteRoute = require("./routes/articleDetail");
 const receiptRoute = require("./routes/receipt");
 const userRoute = require('./routes/user')
+const cartRoute = require('./routes/cart')
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use("/stocks", stockRoute);
 app.use("/articleDetails", articleRouteRoute);
 app.use("/receipts", receiptRoute);
 app.use("/users", userRoute);
+app.use("/cart", cartRoute);
 
 app.listen(9000, function (req, res) {
   console.log("Server running");

@@ -1,10 +1,10 @@
 const express = require("express");
-const Price = require("../models/stock");
+const Stock = require("../models/stock");
 
 async function getAllPrices(req, res) {
   try {
-    const prices = await Price.find();
-    res.json(prices);
+    const stocks = await Stock.find();
+    res.json(stocks);
   } catch (err) {
     res.send("Error" + err);
   }

@@ -14,6 +14,7 @@ async function postArticle(req, res) {
       name: req.body.name,
       description: req.body.description,
       tag: req.body.tag,
+      user_role: req.body.user_role
       });
       try {
         const p1 = await article.save();
