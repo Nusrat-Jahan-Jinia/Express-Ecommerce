@@ -13,15 +13,19 @@ async function getAllInCart(req, res) {
 
 async function create_cart(req, res) {
 
-  const resData = JSON.parse(res.body);
+  const data = JSON.parse(req.body);
+
+  console.log(data.userId);
   
-  console.log(resData.userId);
-
-
-  throw console.error("error going");
     const cart = new Cart({
     
-      
+      userId: data.userId,
+      // articles: [
+      //   {
+      //     articleId:data.articleId ,
+      //     quantity:data.quantity
+      //   }
+      // ]
       });
       try {
         const p1 = await cart.save();
